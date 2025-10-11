@@ -29,7 +29,7 @@ RUN apt-get update && apt-get install -y \
     # X11 / VNC
     xvfb x11vnc xauth x11-xserver-utils \
     x11-apps sudo software-properties-common \
-    # Desktop environment 
+    # Desktop environment
     xfce4 xfce4-goodies dbus dbus-x11 wmctrl \
     bluez bluetooth \
     # Display manager with autologin capability
@@ -213,6 +213,7 @@ RUN ARCH=$(dpkg --print-architecture) && \
 RUN apt-get update && apt-get install -y \
     python3 \
     python3-pip \
+    supervisor \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 RUN ln -s /usr/bin/pip3 /usr/local/bin/pip
