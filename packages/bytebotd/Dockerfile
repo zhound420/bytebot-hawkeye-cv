@@ -52,9 +52,14 @@ RUN apt-get update && apt-get install -y \
     # Clean up to reduce image size
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
+RUN apt-get update && apt-get install -y \
+    dbus \
+    dbus-x11 \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
 RUN mkdir -p /run/dbus && \
     # Generate a machine-id so dbus-daemon doesn't complain
-    dbus-uuidgen --ensure=/etc/machine-id
+    /usr/bin/dbus-uuidgen --ensure=/etc/machine-id
 
 # -----------------------------------------------------------------------------
 # 2.5. Install Node.js EARLY (before compiling any native modules)
@@ -205,6 +210,13 @@ RUN ARCH=$(dpkg --print-architecture) && \
 # 4. VNC and remote access setup
 # -----------------------------------------------------------------------------
 # Install noVNC and websockify
+RUN apt-get update && apt-get install -y \
+    python3 \
+    python3-pip \
+    && apt-get clean && rm -rf /var/lib/apt/lists/*
+
+RUN ln -s /usr/bin/pip3 /usr/local/bin/pip
+
 RUN git clone https://github.com/novnc/noVNC.git /opt/noVNC \
     && git clone https://github.com/novnc/websockify.git /opt/websockify \
     && cd /opt/websockify \
