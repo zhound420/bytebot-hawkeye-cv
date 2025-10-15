@@ -9,6 +9,19 @@
 [![Deploy on Railway](https://railway.com/button.svg)](https://railway.com/deploy/bytebot?referralCode=L9lKXQ)
 </div>
 
+---
+
+## ⚠️ Repository Status
+
+This repository is no longer maintained. Active Hawkeye development lives in two successors:
+
+- [`zhound420/bytebot-hawkeye`](https://github.com/zhound420/bytebot-hawkeye): mainline Hawkeye fork with continuous CV upgrades, Docker deploys, and up-to-date OmniParser setup scripts. Use this for production computer vision workflows.
+- [`zhound420/bytebot-hawkeye-holo`](https://github.com/zhound420/bytebot-hawkeye-holo): Holo 1.5 7B variant bundling llama-cpp-powered local vision + non-vision models, adaptive setup via `setup-holo.sh`, and start scripts for Apple Silicon, NVIDIA, and CPU-only hosts.
+
+[![Status: Archived](https://img.shields.io/badge/status-archived-critical.svg)](https://github.com/zhound420/bytebot-hawkeye)
+
+The remaining content in this README is retained for historical reference only. Please migrate new work, issues, and pull requests to the repositories linked above.
+
 <details>
 <summary><strong>Resources &amp; Translations</strong></summary>
 
